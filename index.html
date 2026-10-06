@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Romeo Diamond Store</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b0b12;
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      padding: 25px 10px;
+      background: #151522;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    .subtitle {
+      margin-top: 8px;
+      color: #aaa;
+    }
+
+    .box {
+      max-width: 420px;
+      margin: 30px auto;
+      padding: 25px;
+      background: #171724;
+      border-radius: 15px;
+    }
+
+    input {
+      width: 90%;
+      padding: 14px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+    }
+
+    .package {
+      padding: 15px;
+      margin: 10px 0;
+      background: #222234;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .package:hover {
+      background: #303049;
+    }
+
+    button {
+      width: 95%;
+      padding: 15px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 10px;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+      background: #ffd000;
+      color: black;
+    }
+
+    footer {
+      margin: 30px;
+      color: #777;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>💎 ROMEO DIAMOND STORE</h1>
+  <div class="subtitle">Free Fire Diamond Top-Up</div>
+</header>
+
+<div class="box">
+
+  <h2>🎮 Free Fire</h2>
+
+  <input
+    type="text"
+    id="playerId"
+    placeholder="Enter Free Fire Player ID"
+  >
+
+  <h3>💎 Select Diamonds</h3>
+
+  <div class="package" onclick="selectPackage('100 Diamonds')">
+    💎 100 Diamonds
+  </div>
+
+  <div class="package" onclick="selectPackage('310 Diamonds')">
+    💎 310 Diamonds
+  </div>
+
+  <div class="package" onclick="selectPackage('520 Diamonds')">
+    💎 520 Diamonds
+  </div>
+
+  <div class="package" onclick="selectPackage('1060 Diamonds')">
+    💎 1060 Diamonds
+  </div>
+
+  <button onclick="continueOrder()">
+    Continue
+  </button>
+
+</div>
+
+<footer>
+  © 2026 Romeo Diamond Store
+</footer>
+
+<script>
+  let selectedPackage = "";
+
+  function selectPackage(packageName) {
+    selectedPackage = packageName;
+    alert("Selected: " + packageName);
+  }
+
+  function continueOrder() {
+    const playerId = document.getElementById("playerId").value;
+
+    if (!playerId) {
+      alert("Please enter your Player ID.");
+      return;
+    }
+
+    if (!selectedPackage) {
+      alert("Please select a Diamond package.");
+      return;
+    }
+
+    alert(
+      "Order ready!\n\n" +
+      "Player ID: " + playerId +
+      "\nPackage: " + selectedPackage
+    );
+  }
+</script>
+
+</body>
+</html>
